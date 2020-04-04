@@ -33,9 +33,9 @@ dependencies = [
 
 [[package]]
 name = "hermit-sys"
-version = "0.1.11"
+version = "0.1.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "21abc35197e192e480b3eea87e0f970b4c4e87e577a2da9055be2e4baa0e928a"
+checksum = "71a71c3770a33a4747f62915a4d8cd7522e2fe21324e38aed1afbc97c15a715c"
 dependencies = [
  "lazy_static",
  "log",
@@ -94,9 +94,9 @@ checksum = "388a1df253eca08550bef6c72392cfe7c30914bf41df5269b68cbd6ff8f570a3"
 
 [[package]]
 name = "x86"
-version = "0.30.0"
+version = "0.31.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9695d9fe76842fa61b8e4ac7a7e6031a9eb1a363b0a32317e5166483590d3bb5"
+checksum = "0562a325e24826b5ce9bbc19ee0639356cc22f073129b652e62d86c2556a8d52"
 dependencies = [
  "bit_field",
  "bitflags",
