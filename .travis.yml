@@ -17,9 +17,9 @@ jobs:
       script:
         - cargo build -Z build-std=std,core,alloc,panic_abort --target x86_64-unknown-hermit
         # used to get terminal with new groups permissions while preserving own user
-        - sudo -E sudo -u $USER -E bash -c "HERMIT_VERBOSE=1 $(HOME)/.cargo/bin/uhyve target/x86_64-unknown-hermit/debug/hello_world"
+        - sudo -E sudo -u $USER -E bash -c "HERMIT_VERBOSE=1 /home/travis/.cargo/bin/uhyve target/x86_64-unknown-hermit/debug/hello_world"
 
     -
       script:
         - cargo build -Z build-std=std,core,alloc,panic_abort --target x86_64-unknown-hermit --release
-        - sudo -E sudo -u $USER -E bash -c "HERMIT_VERBOSE=1 $(HOME)/.cargo/bin/uhyve target/x86_64-unknown-hermit/release/hello_world"
+        - sudo -E sudo -u $USER -E bash -c "HERMIT_VERBOSE=1 /home/travis/.cargo/bin/uhyve target/x86_64-unknown-hermit/release/hello_world"
