@@ -1,0 +1,25 @@
+language: rust
+rust:
+  - nightly
+os: linux
+dist: bionic
+before_install:
+  - sudo apt-get install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+  - sudo adduser $USER libvirt
+  - sudo adduser $USER kvm
+  - cargo install cargo-download
+  - cargo install uhyve
+  - rustup component add rust-src
+  - rustup component add llvm-tools-preview
+jobs:
+  include:
+    - stage: Test
+      script:
+        - cargo build
+        # used to get terminal with new groups permissions while preserving own user
+        - sudo -E sudo -u $USER -E bash -c "HERMIT_VERBOSE=1 uhyve rusty-hermit/target/x86_64-unknown-hermit/debug/hello_world"
+
+    -
+      script:
+        - cargo build --release
+        - sudo -E sudo -u $USER -E bash -c "HERMIT_VERBOSE=1 uhyve rusty-hermit/target/x86_64-unknown-hermit/release/hello_world"
