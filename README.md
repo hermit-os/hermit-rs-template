@@ -1,12 +1,23 @@
 # rusty-demo
 
 Small *Hello World* demo based on the unikernel [RustyHermit](https://github.com/hermitcore/libhermit-rs).
-Please install the latest Rust compiler and use following commands to build and to test the demo.
+Please install the latest Rust compiler from the [official webpage](https://www.rust-lang.org/).
+
+Further requirements are the source code of the Rust runtime, [cargo-download](https://crates.io/crates/cargo-download), and llvm-tools.
+Please install these tools with following commands:
 
 ```sh
+$ cargo install cargo-download
 $ cargo install uhyve
-$ cargo build -Z build-std=std,core,alloc --target x86_64-unknown-hermit
-$ cargo run -Z build-std=std,core,alloc --target x86_64-unknown-hermit
+$ rustup component add rust-src
+$ rustup component add llvm-tools-preview
+```
+
+You can then create and start the demo application as follows:
+
+```sh
+$ cargo build -Z build-std=std,core,alloc,panic_abort --target x86_64-unknown-hermit
+$ cargo run -Z build-std=std,core,alloc,panic_abort --target x86_64-unknown-hermit
 ```
 
 Please read the README of [RustyHermit](https://github.com/hermitcore/libhermit-rs) for more information.
