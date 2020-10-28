@@ -56,9 +56,9 @@ dependencies = [
 
 [[package]]
 name = "cortex-a"
-version = "3.0.4"
+version = "3.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6922a40af4d1a2deac8c963b9f3e57311b8912490740234f1ad182425c547f80"
+checksum = "ad53da88d3deae442c1d6d3d7f3c1ba101520736e01ddb12acb17783b745aff5"
 dependencies = [
  "register",
 ]
@@ -111,9 +111,9 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 
 [[package]]
 name = "libc"
-version = "0.2.79"
+version = "0.2.80"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2448f6066e80e3bfc792e9c98bf705b4b0fc6e8ef5b43e5889aff0eaa9c58743"
+checksum = "4d58d1b70b004888f764dfbf6a26a3b0342a1632d33968e4a179d8011c760614"
 
 [[package]]
 name = "libm"
@@ -294,9 +294,9 @@ dependencies = [
 
 [[package]]
 name = "raw-cpuid"
-version = "8.1.1"
+version = "8.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0cee2c7710d96f9f90f56824fca5438b301dc0fb49ece4cf9dfa044e54067e10"
+checksum = "1fdf7d9dbd43f3d81d94a49c1c3df73cc2b3827995147e6cf7f89d4ec5483e73"
 dependencies = [
  "bitflags",
  "cc",
