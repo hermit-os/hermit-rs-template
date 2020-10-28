@@ -1,13 +1,9 @@
+[unstable]
+build-std = ["std", "core", "alloc", "panic_abort"]
+
 [build]
-# Build for the RustyHermit Unikernel target by default.
 target = "x86_64-unknown-hermit"
 
 [target.x86_64-unknown-hermit]
 # Use uhyve to run the application
 runner = "uhyve -v"
-
-[alias]
-# The cargo command to build the stdlib etc. is long and hard to remember.
-# Let's use some aliases!
-hermit-build = "build -Z build-std=std,core,alloc,panic_abort"
-hermit-run = "run -Z build-std=std,core,alloc,panic_abort"
