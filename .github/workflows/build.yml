@@ -27,7 +27,13 @@ jobs:
       run: cargo install cargo-download
     - name: Building dev version
       run:
-         cargo build --target x86_64-unknown-hermit
+         cargo build
     - name: Building release version
       run:
-         cargo build --target x86_64-unknown-hermit --release
+         cargo build --release
+    - name: Run dev version
+      run:
+         cargo run
+    - name: Run release version
+      run:
+         cargo run --release

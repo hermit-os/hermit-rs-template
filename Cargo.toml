@@ -4,10 +4,20 @@ version = "0.1.0"
 authors = ["Stefan Lankes <slankes@eonerc.rwth-aachen.de>"]
 edition = "2018"
 publish = false
+build = "build.rs"
+license = "MIT/Apache-2.0"
+readme = "README.md"
+description = """
+HelloWorld examples
+"""
+exclude = ["/.gitlab-ci.yml", ".gitignore", ".gitattributes", "/.vscode/*", "/.github/*"]
 
 [target.'cfg(all(any(target_arch = "x86_64", target_arch = "aarch64"), target_os = "hermit"))'.dependencies.hermit-sys]
 version = "0.1.*"
-default-features = false
+#default-features = false
+
+[build-dependencies]
+walkdir = "2"
 
 [profile.release]
 opt-level = 3
