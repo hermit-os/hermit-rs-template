@@ -14,8 +14,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Install qemu
-      run: sudo apt-get update --fix-missing && sudo apt-get install qemu-system-x86
+    - name: Install qemu/nasm
+      run: sudo apt-get update --fix-missing && sudo apt-get install qemu-system-x86 nasm
     - uses: actions/checkout@v1
       with:
          submodules: true
