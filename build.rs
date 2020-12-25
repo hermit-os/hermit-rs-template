@@ -28,7 +28,7 @@ fn configure_cargo_rerun_if_changed(src_dir: &Path) {
 }
 
 fn main() {
-	let loader_dir = env::current_dir().unwrap().join("loader").join("src");
+	let loader_dir = env::current_dir().unwrap().join("loader");
 
 	configure_cargo_rerun_if_changed(loader_dir.as_ref());
 
