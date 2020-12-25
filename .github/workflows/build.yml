@@ -12,11 +12,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04 # linux required if you want to use docker
-    container:
-      image: registry.git.rwth-aachen.de/acs/public/hermitcore/hermitrust
-      options: --cpus 2
-
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
       with:
