@@ -3,7 +3,7 @@
 Small *Hello World* demo based on the unikernel [RustyHermit](https://github.com/hermitcore/libhermit-rs).
 Please install the latest Rust compiler from the [official webpage](https://www.rust-lang.org/).
 
-Further requirements are the source code of the Rust runtime, [cargo-download](https://crates.io/crates/cargo-download), and llvm-tools.
+Further requirements are the source code of the Rust runtime, [cargo-download](https://crates.io/crates/cargo-download), [Qemu](https://www.qemu.org) and llvm-tools.
 Please install these tools with following commands:
 
 ```sh
