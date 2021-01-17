@@ -2,9 +2,9 @@
 # It is not intended for manual editing.
 [[package]]
 name = "aarch64"
-version = "0.0.4"
+version = "0.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4f59a84cc62bda7593f3c5c57f32a89492d6f4cbd9ad462019ac7c46f66c9606"
+checksum = "6270352a570bfc5f730fd1fce0c34b190c75da28e184f7e70704672a539ade77"
 dependencies = [
  "cortex-a",
 ]
@@ -56,18 +56,18 @@ dependencies = [
 
 [[package]]
 name = "cortex-a"
-version = "3.0.5"
+version = "5.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ad53da88d3deae442c1d6d3d7f3c1ba101520736e01ddb12acb17783b745aff5"
+checksum = "d33a61602f83c3fff3e092967ad4d5d820a9fea7bc418e119616872085fe731d"
 dependencies = [
  "register",
 ]
 
 [[package]]
 name = "dtoa"
-version = "0.4.6"
+version = "0.4.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "134951f4028bdadb9b84baf4232681efbf277da25144b9b0ad65df75946c422b"
+checksum = "88d7ed2934d741c6b37e33e3832298e8850b53fd2d2bea03873375596c7cea4e"
 
 [[package]]
 name = "fuchsia-cprng"
@@ -85,9 +85,9 @@ dependencies = [
 
 [[package]]
 name = "hermit-sys"
-version = "0.1.19"
+version = "0.1.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1ee1236238288ce40fe3cbb02968a1c22068fcbb6d639ef7f44233deecb473fc"
+checksum = "027684aabb4d30d584d61834837c7f21d10c93db2a2c50df9fe07b02c16c2d57"
 dependencies = [
  "aarch64",
  "lazy_static",
@@ -113,9 +113,9 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 
 [[package]]
 name = "libc"
-version = "0.2.81"
+version = "0.2.82"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1482821306169ec4d07f6aca392a4681f66c75c9918aa49641a2595db64053cb"
+checksum = "89203f3fba0a3795506acaad8ebce3c80c0af93f994d5a1d7a0b1eeb23271929"
 
 [[package]]
 name = "libm"
@@ -131,9 +131,9 @@ checksum = "955be5d0ca0465caf127165acb47964f911e2bc26073e865deb8be7189302faf"
 
 [[package]]
 name = "log"
-version = "0.4.11"
+version = "0.4.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4fabed175da42fed1fa0746b0ea71f412aa9d35e76e95e59b192c64b9dc2bf8b"
+checksum = "fcf3805d4480bb5b86070dcfeb9e2cb2ebc148adb753c5cca5f884d1d65a42b2"
 dependencies = [
  "cfg-if",
 ]
@@ -322,9 +322,9 @@ dependencies = [
 
 [[package]]
 name = "register"
-version = "0.5.1"
+version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "deaba5b0e477d21f61a57504bb5cef4a1e86de30300b457d38971c1cfc98b815"
+checksum = "f4a247de29ab7cc8f5006cfe775c4a81c704f9914c5e2a79696862e643135433"
 dependencies = [
  "tock-registers",
 ]
@@ -399,9 +399,9 @@ dependencies = [
 
 [[package]]
 name = "tock-registers"
-version = "0.5.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "70323afdb8082186c0986da0e10f6e4ed103d681c921c00597e98d9806dac20f"
+checksum = "f521a79accce68c417c9c77ce22108056b626126da1932f7e2e9b5bbffee0cea"
 
 [[package]]
 name = "walkdir"
@@ -447,9 +447,9 @@ checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
 
 [[package]]
 name = "x86"
-version = "0.34.0"
+version = "0.35.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c146cbc47471e076987378c159a7aa8fa434680c6fbddca59fe6f40f1591c819"
+checksum = "1851696db84188e868fffb08002a5635f6abb136b68fe65a5bae38cdbdbc4852"
 dependencies = [
  "bit_field",
  "bitflags",
