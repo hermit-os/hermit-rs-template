@@ -1,3 +1,4 @@
 [toolchain]
-channel = "nightly"
-components = [ "rust-src", "llvm-tools-preview"]
+channel = "nightly-2021-04-20"
+components = [ "rustfmt", "rust-src", "llvm-tools-preview"]
+targets = [ "x86_64-unknown-hermit" ]
