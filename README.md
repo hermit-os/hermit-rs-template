@@ -12,7 +12,7 @@ $ rustup component add rust-src
 $ rustup component add llvm-tools-preview
 ```
 
-Because we set some aliases in the [`.cargo/config`](https://github.com/hermitcore/rusty-demo/blob/master/.cargo/config) file, you can then create and start the demo application as follows.
+Because we set some aliases in the [`.cargo/config.toml`](https://github.com/hermitcore/rusty-demo/blob/master/.cargo/config.toml) file, you can then create and start the demo application as follows.
 ```sh
 $ # build loader
 $ cd loader
