@@ -14,10 +14,14 @@ $ rustup component add llvm-tools-preview
 
 Because we set some aliases in the [`.cargo/config`](https://github.com/hermitcore/rusty-demo/blob/master/.cargo/config) file, you can then create and start the demo application as follows.
 ```sh
+$ # build loader
+$ cd loader
+$ make release=1
+$ cd -
+$ # build demo application
 $ cargo build
-# [...]
+$ # run demo application
 $ cargo run
-# [...]
 ```
 
 Please read the README of [RustyHermit](https://github.com/hermitcore/libhermit-rs) for more information.

@@ -23,6 +23,9 @@ jobs:
       run: cargo --version
     - name: Install cargo-download
       run: cargo install cargo-download
+    - name: Build loader
+      working-directory: ./loader
+      run: make release=1
     - name: Building dev version
       run:
          cargo build
