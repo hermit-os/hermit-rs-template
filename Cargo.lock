@@ -138,9 +138,9 @@ dependencies = [
 
 [[package]]
 name = "hermit-sys"
-version = "0.1.23"
+version = "0.1.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "029ff47825c028a3c814b3a49bc8fca60e8a0ee9266d8291a91b65ae6db6c3c4"
+checksum = "1dbbf3fe3ccfa336c8d24db3be327d3b481401fb6adc3beef13170c21bc6f50e"
 dependencies = [
  "aarch64",
  "async-task",
@@ -178,9 +178,9 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 
 [[package]]
 name = "libc"
-version = "0.2.101"
+version = "0.2.102"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3cb00336871be5ed2c8ed44b60ae9959dc5b9f08539422ed43f09e34ecaeba21"
+checksum = "a2a5ac8f984bfcf3a823267e5fde638acc3325f6496633a5da6bb6eb2171e103"
 
 [[package]]
 name = "libm"
