@@ -23,6 +23,8 @@ jobs:
       run: cargo --version
     - name: Install cargo-download
       run: cargo install cargo-download
+    - name: Install cargo-binutils
+      run: cargo install cargo-binutils
     - name: Build loader
       working-directory: ./loader
       run: make release=1

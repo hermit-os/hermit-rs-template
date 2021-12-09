@@ -8,6 +8,7 @@ Please install these tools with following commands:
 
 ```sh
 $ cargo install cargo-download
+$ cargo install cargo-binutils
 $ rustup component add rust-src
 $ rustup component add llvm-tools-preview
 ```
