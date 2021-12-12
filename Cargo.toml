@@ -11,6 +11,5 @@ HelloWorld examples
 """
 exclude = ["/.gitlab-ci.yml", ".gitignore", ".gitattributes", "/.vscode/*", "/.github/*"]
 
-[target.'cfg(all(any(target_arch = "x86_64", target_arch = "aarch64"), target_os = "hermit"))'.dependencies.hermit-sys]
-version = "0.1.*"
-#default-features = false
+[target.'cfg(target_os = "hermit")'.dependencies]
+hermit-sys = "0.1"
