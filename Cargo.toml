@@ -6,9 +6,7 @@ edition = "2018"
 publish = false
 license = "MIT/Apache-2.0"
 readme = "README.md"
-description = """
-HelloWorld examples
-"""
+description = "Hello, RustyHermit!"
 exclude = ["/.gitlab-ci.yml", ".gitignore", ".gitattributes", "/.vscode/*", "/.github/*"]
 
 [target.'cfg(target_os = "hermit")'.dependencies]
