@@ -100,7 +100,6 @@ name = "hello_world"
 version = "0.1.0"
 dependencies = [
  "hermit-sys",
- "walkdir",
 ]
 
 [[package]]
