@@ -1,31 +1,51 @@
 # rusty-demo
 
 Small *Hello World* demo based on the unikernel [RustyHermit](https://github.com/hermitcore/libhermit-rs).
-Please install the latest Rust compiler from the [official webpage](https://www.rust-lang.org/).
-
-Further requirements are the source code of the Rust runtime, [`cargo-download`](https://crates.io/crates/cargo-download), [`qemu`](https://www.qemu.org), [`nasm`](https://www.nasm.us/), `ar` and llvm-tools.
-Please install these tools with following commands:
-
-```sh
-$ cargo install cargo-download
-$ cargo install cargo-binutils
-$ rustup component add rust-src
-$ rustup component add llvm-tools-preview
-```
-
-Because we set some aliases in the [`.cargo/config.toml`](https://github.com/hermitcore/rusty-demo/blob/master/.cargo/config.toml) file, you can then create and start the demo application as follows.
-```sh
-$ # build loader
-$ cd loader
-$ make release=1
-$ cd -
-$ # build demo application
-$ cargo build
-$ # run demo application
-$ cargo run
-```
 
 Please read the README of [RustyHermit](https://github.com/hermitcore/libhermit-rs) for more information.
+
+
+## Requirements
+
+* [`rustup`](https://www.rust-lang.org/tools/install)
+* [NASM](https://nasm.us/) (only for x86_64)
+* [QEMU](https://www.qemu.org/) for running the application
+
+
+## Usage
+
+
+### Build the Bootloader
+
+```
+$ cd loader
+$ cargo xtask build --arch x86_64 --release
+```
+
+
+### Build the Hermit Application
+
+``` 
+$ cargo build \
+    -Zbuild-std=core,alloc,std,panic_abort \
+    -Zbuild-std-features=compiler-builtins-mem \
+    --target x86_64-unknown-hermit \
+    --release
+```
+
+
+### Run the Application in QEMU
+
+```
+$ qemu-system-x86_64 \
+    -cpu qemu64,apic,fsgsbase,fxsr,rdrand,rdtscp,xsave,xsaveopt \
+    -smp 1 -m 64M \
+    -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
+    -display none -serial stdio \
+    -kernel loader/target/x86_64/release/rusty-loader \
+    -initrd target/x86_64-unknown-hermit/release/hello_world
+```
+
 
 ## License
 
