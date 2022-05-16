@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install QEMU, NASM 
+      run: |
+        sudo apt-get update
+        sudo apt-get install qemu-system-x86 qemu-system-arm nasm
+    - uses: actions/checkout@v3
+      with:
+         submodules: true
+    - name: Build loader
+      working-directory: ./loader
+      run: cargo xtask build --arch x86_64 --release
+    - name: Building dev version
+      run: |
+        cargo build \
+          -Zbuild-std=core,alloc,std,panic_abort \
+          -Zbuild-std-features=compiler-builtins-mem \
+          --target x86_64-unknown-hermit
+    - name: Run dev version
+      run: |
+        qemu-system-x86_64 \
+          -cpu qemu64,apic,fsgsbase,fxsr,rdrand,rdtscp,xsave,xsaveopt \
+          -smp 1 -m 64M \
+          -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
+          -display none -serial stdio \
+          -kernel loader/target/x86_64/release/rusty-loader \
+          -initrd target/x86_64-unknown-hermit/debug/hello_world
+    - name: Building release version
+      run: |
+        cargo build \
+          -Zbuild-std=core,alloc,std,panic_abort \
+          -Zbuild-std-features=compiler-builtins-mem \
+          --target x86_64-unknown-hermit \
+          --release
+    - name: Run release version
+      run: |
+        qemu-system-x86_64 \
+          -cpu qemu64,apic,fsgsbase,fxsr,rdrand,rdtscp,xsave,xsaveopt \
+          -smp 1 -m 64M \
+          -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
+          -display none -serial stdio \
+          -kernel loader/target/x86_64/release/rusty-loader \
+          -initrd target/x86_64-unknown-hermit/release/hello_world
