@@ -13,16 +13,18 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-    - name: Install QEMU, NASM 
+    - name: Install QEMU, NASM
       run: |
         sudo apt-get update
-        sudo apt-get install qemu-system-x86 qemu-system-arm nasm
+        sudo apt-get install qemu-system-x86 nasm
     - uses: actions/checkout@v3
       with:
          submodules: true
-    - name: Build loader
-      working-directory: ./loader
-      run: cargo xtask build --arch x86_64 --release
+    - name: Download loader
+      uses: dsaltares/fetch-gh-release-asset@1.0.0
+      with:
+        repo: hermitcore/rusty-loader
+        file: rusty-loader-x86_64
     - name: Building dev version
       run: |
         cargo build \
@@ -36,7 +38,7 @@ jobs:
           -smp 1 -m 64M \
           -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
           -display none -serial stdio \
-          -kernel loader/target/x86_64/release/rusty-loader \
+          -kernel rusty-loader-x86_64 \
           -initrd target/x86_64-unknown-hermit/debug/hello_world
     - name: Building release version
       run: |
@@ -52,5 +54,5 @@ jobs:
           -smp 1 -m 64M \
           -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
           -display none -serial stdio \
-          -kernel loader/target/x86_64/release/rusty-loader \
+          -kernel rusty-loader-x86_64 \
           -initrd target/x86_64-unknown-hermit/release/hello_world
