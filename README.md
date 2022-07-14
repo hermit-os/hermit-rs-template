@@ -8,19 +8,12 @@ Please read the README of [RustyHermit](https://github.com/hermitcore/libhermit-
 ## Requirements
 
 * [`rustup`](https://www.rust-lang.org/tools/install)
-* [NASM](https://nasm.us/) (only for x86_64)
+* [NASM](https://nasm.us/) (only for x86_64 with SMP)
 * [QEMU](https://www.qemu.org/) for running the application
 
 
 ## Usage
 
-
-### Build the Bootloader
-
-```
-$ cd loader
-$ cargo xtask build --arch x86_64 --release
-```
 
 
 ### Build the Hermit Application
@@ -36,13 +29,15 @@ $ cargo build \
 
 ### Run the Application in QEMU
 
+Download the rusty-loader binary from its [releases page](https://github.com/hermitcore/rusty-loader/releases).
+
 ```
 $ qemu-system-x86_64 \
     -cpu qemu64,apic,fsgsbase,fxsr,rdrand,rdtscp,xsave,xsaveopt \
     -smp 1 -m 64M \
     -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
     -display none -serial stdio \
-    -kernel loader/target/x86_64/release/rusty-loader \
+    -kernel rusty-loader-x86_64 \
     -initrd target/x86_64-unknown-hermit/release/hello_world
 ```
 
