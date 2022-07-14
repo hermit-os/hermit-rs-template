@@ -9,7 +9,7 @@ Please read the README of [RustyHermit](https://github.com/hermitcore/libhermit-
 
 * [`rustup`](https://www.rust-lang.org/tools/install)
 * [NASM](https://nasm.us/) (only for x86_64 with SMP)
-* [QEMU](https://www.qemu.org/) for running the application
+* [QEMU](https://www.qemu.org/) or [uhyve](https://github.com/hermitcore/uhyve) for running the application
 
 
 ## Usage
@@ -24,6 +24,13 @@ $ cargo build \
     -Zbuild-std-features=compiler-builtins-mem \
     --target x86_64-unknown-hermit \
     --release
+```
+
+
+### Run the Application in uhyve
+
+```
+$ uhyve target/x86_64-unknown-hermit/release/hello_world
 ```
 
 
