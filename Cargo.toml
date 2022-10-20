@@ -10,4 +10,4 @@ description = "Hello, RustyHermit!"
 exclude = ["/.gitlab-ci.yml", ".gitignore", ".gitattributes", "/.vscode/*", "/.github/*"]
 
 [target.'cfg(target_os = "hermit")'.dependencies]
-hermit-sys = "0.3"
+hermit-sys = "0.4"
