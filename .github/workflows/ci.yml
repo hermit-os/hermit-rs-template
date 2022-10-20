@@ -29,7 +29,6 @@ jobs:
       run: |
         cargo build \
           -Zbuild-std=core,alloc,std,panic_abort \
-          -Zbuild-std-features=compiler-builtins-mem \
           --target x86_64-unknown-hermit
     - name: Run dev version
       run: |
@@ -44,7 +43,6 @@ jobs:
       run: |
         cargo build \
           -Zbuild-std=core,alloc,std,panic_abort \
-          -Zbuild-std-features=compiler-builtins-mem \
           --target x86_64-unknown-hermit \
           --release
     - name: Run release version
