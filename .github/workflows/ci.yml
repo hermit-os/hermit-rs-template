@@ -28,7 +28,7 @@ jobs:
     - name: Building dev version
       run: |
         cargo build \
-          -Zbuild-std=core,alloc,std,panic_abort \
+          -Zbuild-std=std,panic_abort \
           --target x86_64-unknown-hermit
     - name: Run dev version
       run: |
@@ -42,7 +42,7 @@ jobs:
     - name: Building release version
       run: |
         cargo build \
-          -Zbuild-std=core,alloc,std,panic_abort \
+          -Zbuild-std=std,panic_abort \
           --target x86_64-unknown-hermit \
           --release
     - name: Run release version
