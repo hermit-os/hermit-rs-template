@@ -1,8 +1,6 @@
 # rusty-demo
 
-Small *Hello World* demo based on the unikernel [RustyHermit](https://github.com/hermitcore/libhermit-rs).
-
-Please read the README of [RustyHermit](https://github.com/hermitcore/libhermit-rs) for more information.
+An application template for [RustyHermit](https://github.com/hermitcore/rusty-hermit).
 
 
 ## Requirements
@@ -10,6 +8,31 @@ Please read the README of [RustyHermit](https://github.com/hermitcore/libhermit-
 * [`rustup`](https://www.rust-lang.org/tools/install)
 * [NASM](https://nasm.us/) (only for x86_64 with SMP)
 * [QEMU](https://www.qemu.org/) or [uhyve](https://github.com/hermitcore/uhyve) for running the application
+
+
+## Notable changes for RustyHermit
+
+*   Add the `hermit-sys` dependency for hermit targets in `Cargo.toml`.
+
+    ```toml
+    [target.'cfg(target_os = "hermit")'.dependencies]
+    hermit-sys = "<version>"
+    ```
+
+*   Use the exact Rust version required by `hermit-sys` in `rust-toolchain.toml` and make the `rust-src` component available:
+
+    ```toml
+    [toolchain]
+    channel = "<version>"
+    components = ["rust-src"]
+    ```
+
+*   Make sure, we link against hermit in `main.rs`:
+
+    ```rust
+    #[cfg(target_os = "hermit")]
+    use hermit_sys as _;
+    ```
 
 
 ## Usage
