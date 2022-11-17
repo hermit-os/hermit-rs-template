@@ -55,6 +55,8 @@ $ cargo build \
 $ uhyve target/x86_64-unknown-hermit/release/hello_world
 ```
 
+For more details see [uhyve's README](https://github.com/hermitcore/uhyve/blob/master/README.md).
+
 
 ### Run the Application in QEMU
 
@@ -69,3 +71,5 @@ $ qemu-system-x86_64 \
     -kernel rusty-loader-x86_64 \
     -initrd target/x86_64-unknown-hermit/release/hello_world
 ```
+
+For more details see the [loader's README](https://github.com/hermitcore/rusty-loader/blob/master/README.md).
