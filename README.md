@@ -47,6 +47,12 @@ $ qemu-system-x86_64 \
     -initrd target/x86_64-unknown-hermit/release/hello_world
 ```
 
+Arguments can be provided like this:
+
+```
+$ qemu-system-x86_64 ... -append "kernel-args -- app-args"
+```
+
 
 ## License
 
