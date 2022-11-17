@@ -43,7 +43,7 @@ An application template for [RustyHermit](https://github.com/hermitcore/rusty-he
 
 ``` 
 $ cargo build \
-    -Zbuild-std=core,alloc,std,panic_abort \
+    -Zbuild-std=std,panic_abort \
     --target x86_64-unknown-hermit \
     --release
 ```
