@@ -1,12 +1,7 @@
 [package]
 name = "hello_world"
 version = "0.1.0"
-authors = ["Stefan Lankes <slankes@eonerc.rwth-aachen.de>"]
 edition = "2021"
-publish = false
-readme = "README.md"
-description = "Hello, RustyHermit!"
-exclude = ["/.gitlab-ci.yml", ".gitignore", ".gitattributes", "/.vscode/*", "/.github/*"]
 
 [target.'cfg(target_os = "hermit")'.dependencies]
 hermit-sys = "0.4"
