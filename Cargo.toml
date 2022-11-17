@@ -4,7 +4,6 @@ version = "0.1.0"
 authors = ["Stefan Lankes <slankes@eonerc.rwth-aachen.de>"]
 edition = "2021"
 publish = false
-license = "MIT/Apache-2.0"
 readme = "README.md"
 description = "Hello, RustyHermit!"
 exclude = ["/.gitlab-ci.yml", ".gitignore", ".gitattributes", "/.vscode/*", "/.github/*"]
