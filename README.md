@@ -21,7 +21,7 @@ An application template for [RustyHermit](https://github.com/hermitcore/rusty-he
 
 *   Use the [exact Rust version] required by `hermit-sys` in `rust-toolchain.toml` and make the `rust-src` component available:
 
-[exact Rust version]: rust-toolchain.toml#L2
+    [exact Rust version]: rust-toolchain.toml#L2
 
     ```toml
     [toolchain]
