@@ -6,9 +6,6 @@ on:
       - main
   pull_request:
 
-env:
-  CARGO_TERM_COLOR: always
-
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -18,6 +15,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install qemu-system-x86 nasm
     - uses: actions/checkout@v3
+    - uses: mkroening/rust-toolchain-toml@main
     - name: Download loader
       uses: dsaltares/fetch-gh-release-asset@1.0.0
       with:
