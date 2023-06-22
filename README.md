@@ -7,7 +7,7 @@ An application template for [RustyHermit](https://github.com/hermitcore/rusty-he
 
 * [`rustup`](https://www.rust-lang.org/tools/install)
 * [NASM](https://nasm.us/) (only for x86_64 with SMP)
-* [QEMU](https://www.qemu.org/) or [uhyve](https://github.com/hermitcore/uhyve) for running the application
+* [QEMU](https://www.qemu.org/) or [Uhyve](https://github.com/hermitcore/uhyve) for running the application
 
 
 ## Notable changes for RustyHermit
@@ -29,7 +29,7 @@ An application template for [RustyHermit](https://github.com/hermitcore/rusty-he
     components = ["rust-src"]
     ```
 
-*   Make sure, we link against hermit in `main.rs`:
+*   Make sure we link against hermit in `main.rs`:
 
     ```rust
     #[cfg(target_os = "hermit")]
@@ -51,13 +51,13 @@ $ cargo build \
 ```
 
 
-### Run the Application in uhyve
+### Run the Application in Uhyve
 
 ```
 $ uhyve target/x86_64-unknown-hermit/release/hello_world
 ```
 
-For more details see [uhyve's README](https://github.com/hermitcore/uhyve/blob/master/README.md).
+For more details, see [uhyve's README](https://github.com/hermitcore/uhyve/blob/master/README.md).
 
 
 ### Run the Application in QEMU
@@ -74,4 +74,4 @@ $ qemu-system-x86_64 \
     -initrd target/x86_64-unknown-hermit/release/hello_world
 ```
 
-For more details see the [loader's README](https://github.com/hermitcore/rusty-loader/blob/master/README.md).
+For more details, see the [loader's README](https://github.com/hermitcore/rusty-loader/blob/master/README.md).
