@@ -16,16 +16,23 @@ jobs:
         sudo apt-get install qemu-system-x86 nasm
     - uses: actions/checkout@v3
     - uses: mkroening/rust-toolchain-toml@main
+    - name: Download rust-std-hermit
+      uses: dsaltares/fetch-gh-release-asset@1.0.0
+      with:
+        repo: hermitcore/rust-std-hermit
+        version: tags/1.70.0
+        file: rust-std-1.70.0-x86_64-unknown-hermit.tar.gz
+    - name: Install rust-std-hermit
+      run: |
+        tar xvf rust-std-1.70.0-x86_64-unknown-hermit.tar.gz
+        ./rust-std-1.70.0-x86_64-unknown-hermit/install.sh
     - name: Download loader
       uses: dsaltares/fetch-gh-release-asset@1.0.0
       with:
         repo: hermitcore/rusty-loader
         file: rusty-loader-x86_64
     - name: Building dev version
-      run: |
-        cargo build \
-          -Zbuild-std=std,panic_abort \
-          --target x86_64-unknown-hermit
+      run: cargo build --target x86_64-unknown-hermit
     - name: Run dev version
       run: |
         qemu-system-x86_64 \
@@ -36,11 +43,7 @@ jobs:
           -kernel rusty-loader-x86_64 \
           -initrd target/x86_64-unknown-hermit/debug/hello_world
     - name: Building release version
-      run: |
-        cargo build \
-          -Zbuild-std=std,panic_abort \
-          --target x86_64-unknown-hermit \
-          --release
+      run: cargo build --target x86_64-unknown-hermit --release
     - name: Run release version
       run: |
         qemu-system-x86_64 \
