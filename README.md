@@ -26,7 +26,6 @@ An application template for [RustyHermit](https://github.com/hermitcore/rusty-he
     ```toml
     [toolchain]
     channel = "<version>"
-    components = ["rust-src"]
     ```
 
 *   Make sure we link against hermit in `main.rs`:
@@ -39,15 +38,12 @@ An application template for [RustyHermit](https://github.com/hermitcore/rusty-he
 
 ## Usage
 
-
+Install [rust-std-hermit](https://github.com/hermitcore/rust-std-hermit).
 
 ### Build the Hermit Application
 
 ``` 
-$ cargo build \
-    -Zbuild-std=std,panic_abort \
-    --target x86_64-unknown-hermit \
-    --release
+$ cargo build --target x86_64-unknown-hermit
 ```
 
 
