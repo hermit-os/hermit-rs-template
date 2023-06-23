@@ -6,14 +6,34 @@ on:
       - main
   pull_request:
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
-      - name: Install QEMU, NASM
+      - name: Install QEMU, NASM (ubuntu)
+        if: matrix.os == 'ubuntu-latest'
         run: |
           sudo apt-get update
           sudo apt-get install qemu-system-x86 nasm
+      - name: Install QEMU, NASM (macos)
+        if: matrix.os == 'macos-latest'
+        run: |
+          brew update
+          brew install qemu nasm
+      - name: Install QEMU, NASM (windows)
+        if: matrix.os == 'windows-latest'
+        run: |
+          choco install qemu --checksum64 20d26b460ec045b2cad4bdc4af59713db3110ab95dd73821a590571e4fc1ce1b972e9647867c16e061d1f7381de362ac9c9bfc027f47cdcce8a186818b595ffb
+          echo "C:\Program Files\qemu" >> $GITHUB_PATH
+          choco install nasm
+          echo "C:\Program Files\NASM" >> $GITHUB_PATH
       - uses: actions/checkout@v3
       - uses: mkroening/rust-toolchain-toml@main
       - name: Download rust-std-hermit
