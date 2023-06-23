@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: mkroening/rust-toolchain-toml@main
       - name: Download rust-std-hermit
-        uses: dsaltares/fetch-gh-release-asset@1.0.0
+        uses: dsaltares/fetch-gh-release-asset@master
         with:
           repo: hermitcore/rust-std-hermit
           version: tags/1.70.0
@@ -27,7 +27,7 @@ jobs:
           tar xvf rust-std-1.70.0-x86_64-unknown-hermit.tar.gz
           ./rust-std-1.70.0-x86_64-unknown-hermit/install.sh
       - name: Download loader
-        uses: dsaltares/fetch-gh-release-asset@1.0.0
+        uses: dsaltares/fetch-gh-release-asset@master
         with:
           repo: hermitcore/rusty-loader
           file: rusty-loader-x86_64
