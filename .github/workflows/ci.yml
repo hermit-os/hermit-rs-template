@@ -32,7 +32,7 @@ jobs:
           repo: hermitcore/rusty-loader
           file: rusty-loader-x86_64
       - name: Building dev version
-        run: cargo build --target x86_64-unknown-hermit
+        run: cargo build --target x86_64-unknown-hermit --locked
       - name: Run dev version
         run: |
           qemu-system-x86_64 \
@@ -43,7 +43,7 @@ jobs:
             -kernel rusty-loader-x86_64 \
             -initrd target/x86_64-unknown-hermit/debug/hello_world
       - name: Building release version
-        run: cargo build --target x86_64-unknown-hermit --release
+        run: cargo build --target x86_64-unknown-hermit --locked --release
       - name: Run release version
         run: |
           qemu-system-x86_64 \
