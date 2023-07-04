@@ -21,7 +21,7 @@ An application template for [RustyHermit](https://github.com/hermitcore/rusty-he
     hermit-sys = "<version>"
     ```
 
-*   Use the [exact Rust version](Update) required by `hermit-sys` in `rust-toolchain.toml`.
+*   Use the [exact Rust version](rust-toolchain.toml#L2) required by `hermit-sys` in `rust-toolchain.toml`.
 
     ```toml
     [toolchain]
