@@ -10,7 +10,9 @@ An application template for [RustyHermit](https://github.com/hermitcore/rusty-he
 * [QEMU](https://www.qemu.org/) or [Uhyve](https://github.com/hermitcore/uhyve) for running the application
 
 
-## Notable changes for RustyHermit
+## Transform your application into a RustyHermit image:
+
+(this is already done in this repo)
 
 *   Add the `hermit-sys` dependency for hermit targets in `Cargo.toml`.
 
