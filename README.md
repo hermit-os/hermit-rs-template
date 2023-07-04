@@ -38,7 +38,9 @@ An application template for [RustyHermit](https://github.com/hermitcore/rusty-he
 
 ## Usage
 
-Install [rust-std-hermit](https://github.com/hermitcore/rust-std-hermit).
+### Install the Rust Standard Library for Rusty-Hermit
+
+See [rust-std-hermit](https://github.com/hermitcore/rust-std-hermit).
 
 ### Build the Hermit Application
 
