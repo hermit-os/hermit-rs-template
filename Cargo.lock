@@ -90,9 +90,9 @@ dependencies = [
 
 [[package]]
 name = "hermit-sys"
-version = "0.5.2"
+version = "0.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5ab69934a8e4f517c1c465c670b14d375000adfb746d43509f1589ccf08ae2ca"
+checksum = "3b703a923021f13aa4bcee52fbf9ad0db68b050a1251bfc5052cb4c1484bba9e"
 dependencies = [
  "flate2",
  "tar",
@@ -126,9 +126,9 @@ checksum = "b4668fb0ea861c1df094127ac5f1da3409a82116a4ba74fca2e58ef927159bb3"
 
 [[package]]
 name = "log"
-version = "0.4.19"
+version = "0.4.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b06a4cde4c0f271a446782e3eff8de789548ce57dbc8eca9292c27f4a42004b4"
+checksum = "b5e6163cb8c49088c2c36f57875e58ccd8c87c7427f7fbd50ea6710b2f3f2e8f"
 
 [[package]]
 name = "miniz_oxide"
