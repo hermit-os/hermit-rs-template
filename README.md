@@ -60,7 +60,7 @@ For more details, see [uhyve's README](https://github.com/hermitcore/uhyve/blob/
 
 ### Run the Application in QEMU
 
-Download the rusty-loader binary from its [releases page](https://github.com/hermitcore/rusty-loader/releases).
+Download the loader binary from its [releases page](https://github.com/hermitcore/loader/releases).
 
 ```
 $ qemu-system-x86_64 \
@@ -72,4 +72,4 @@ $ qemu-system-x86_64 \
     -initrd target/x86_64-unknown-hermit/release/hermit-rs-template
 ```
 
-For more details, see the [loader's README](https://github.com/hermitcore/rusty-loader/blob/master/README.md).
+For more details, see the [loader's README](https://github.com/hermitcore/loader/blob/master/README.md).
