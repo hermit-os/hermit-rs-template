@@ -1,4 +1,4 @@
-# rusty-demo
+# hermit-rs-template
 
 An application template for [RustyHermit](https://github.com/hermitcore/rusty-hermit).
 
