@@ -62,7 +62,7 @@ jobs:
             -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
             -display none -serial stdio \
             -kernel rusty-loader-x86_64 \
-            -initrd target/x86_64-unknown-hermit/debug/hello_world
+            -initrd target/x86_64-unknown-hermit/debug/hermit-rs-template
       - name: Building release version
         run: cargo build --target x86_64-unknown-hermit --locked --release
       - name: Run release version
@@ -73,4 +73,4 @@ jobs:
             -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
             -display none -serial stdio \
             -kernel rusty-loader-x86_64 \
-            -initrd target/x86_64-unknown-hermit/release/hello_world
+            -initrd target/x86_64-unknown-hermit/release/hermit-rs-template
