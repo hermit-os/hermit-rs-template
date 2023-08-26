@@ -1,6 +1,6 @@
 # hermit-rs-template
 
-An application template for [RustyHermit](https://github.com/hermitcore/rusty-hermit).
+An application template for [Hermit for Rust](https://github.com/hermitcore/hermit-rs).
 
 
 ## Requirements
@@ -10,7 +10,7 @@ An application template for [RustyHermit](https://github.com/hermitcore/rusty-he
 * [QEMU](https://www.qemu.org/) or [Uhyve](https://github.com/hermitcore/uhyve) for running the application
 
 
-## Transform your application into a RustyHermit image:
+## Transform your application into a Hermit image:
 
 (this is already done in this repo)
 
@@ -38,7 +38,7 @@ An application template for [RustyHermit](https://github.com/hermitcore/rusty-he
 
 ## Usage
 
-### Install the Rust Standard Library for Rusty-Hermit
+### Install the Rust Standard Library for Hermit
 
 See [rust-std-hermit](https://github.com/hermitcore/rust-std-hermit).
 
