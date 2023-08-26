@@ -82,7 +82,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "hello_world"
+name = "hermit-rs-template"
 version = "0.1.0"
 dependencies = [
  "hermit-sys",
