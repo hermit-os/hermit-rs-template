@@ -52,7 +52,7 @@ $ cargo build --target x86_64-unknown-hermit
 ### Run the Application in Uhyve
 
 ```
-$ uhyve target/x86_64-unknown-hermit/release/hermit-rs-template
+$ uhyve target/x86_64-unknown-hermit/debug/hermit-rs-template
 ```
 
 For more details, see [uhyve's README](https://github.com/hermitcore/uhyve/blob/master/README.md).
@@ -69,7 +69,7 @@ $ qemu-system-x86_64 \
     -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
     -display none -serial stdio \
     -kernel rusty-loader-x86_64 \
-    -initrd target/x86_64-unknown-hermit/release/hermit-rs-template
+    -initrd target/x86_64-unknown-hermit/debug/hermit-rs-template
 ```
 
 For more details, see the [loader's README](https://github.com/hermitcore/loader/blob/master/README.md).
