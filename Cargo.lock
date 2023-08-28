@@ -82,21 +82,21 @@ dependencies = [
 ]
 
 [[package]]
-name = "hermit-rs-template"
-version = "0.1.0"
-dependencies = [
- "hermit-sys",
-]
-
-[[package]]
-name = "hermit-sys"
-version = "0.5.4"
+name = "hermit"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6b2e83c9329266705beab2c9f37bf643477453e0d42abed1c0256a222c583aca"
+checksum = "985c97e62c730e7d866ab09480f034478d470ab5d135fa54503274af7bb2f18d"
 dependencies = [
  "flate2",
  "tar",
  "ureq",
+]
+
+[[package]]
+name = "hermit-rs-template"
+version = "0.1.0"
+dependencies = [
+ "hermit",
 ]
 
 [[package]]
