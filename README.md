@@ -14,14 +14,14 @@ An application template for [Hermit for Rust](https://github.com/hermitcore/herm
 
 (this is already done in this repo)
 
-*   Add the `hermit-sys` dependency for hermit targets in `Cargo.toml`.
+*   Add the `hermit` dependency for hermit targets in `Cargo.toml`.
 
     ```toml
     [target.'cfg(target_os = "hermit")'.dependencies]
-    hermit-sys = "<version>"
+    hermit = "<version>"
     ```
 
-*   Use the [exact Rust version](rust-toolchain.toml#L2) required by `hermit-sys` in `rust-toolchain.toml`.
+*   Use the [exact Rust version](rust-toolchain.toml#L2) required by `hermit` in `rust-toolchain.toml`.
 
     ```toml
     [toolchain]
