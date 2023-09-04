@@ -32,7 +32,7 @@ An application template for [Hermit for Rust](https://github.com/hermitcore/herm
 
     ```rust
     #[cfg(target_os = "hermit")]
-    use hermit_sys as _;
+    use hermit as _;
     ```
 
 
