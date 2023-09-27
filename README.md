@@ -6,7 +6,6 @@ An application template for [Hermit for Rust](https://github.com/hermitcore/herm
 ## Requirements
 
 * [`rustup`](https://www.rust-lang.org/tools/install)
-* [NASM](https://nasm.us/) (only for x86_64 with SMP)
 * [QEMU](https://www.qemu.org/) or [Uhyve](https://github.com/hermitcore/uhyve) for running the application
 
 
