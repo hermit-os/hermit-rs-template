@@ -1,12 +1,12 @@
 # hermit-rs-template
 
-An application template for [Hermit for Rust](https://github.com/hermitcore/hermit-rs).
+An application template for [Hermit for Rust](https://github.com/hermit-os/hermit-rs).
 
 
 ## Requirements
 
 * [`rustup`](https://www.rust-lang.org/tools/install)
-* [QEMU](https://www.qemu.org/) or [Uhyve](https://github.com/hermitcore/uhyve) for running the application
+* [QEMU](https://www.qemu.org/) or [Uhyve](https://github.com/hermit-os/uhyve) for running the application
 
 
 ## Transform your application into a Hermit image:
@@ -39,7 +39,7 @@ An application template for [Hermit for Rust](https://github.com/hermitcore/herm
 
 ### Install the Rust Standard Library for Hermit
 
-See [rust-std-hermit](https://github.com/hermitcore/rust-std-hermit).
+See [rust-std-hermit](https://github.com/hermit-os/rust-std-hermit).
 
 ### Build the Hermit Application
 
@@ -54,12 +54,12 @@ $ cargo build --target x86_64-unknown-hermit
 $ uhyve target/x86_64-unknown-hermit/debug/hermit-rs-template
 ```
 
-For more details, see [uhyve's README](https://github.com/hermitcore/uhyve/blob/master/README.md).
+For more details, see [uhyve's README](https://github.com/hermit-os/uhyve/blob/master/README.md).
 
 
 ### Run the Application in QEMU
 
-Download the loader binary from its [releases page](https://github.com/hermitcore/loader/releases).
+Download the loader binary from its [releases page](https://github.com/hermit-os/loader/releases).
 
 ```
 $ qemu-system-x86_64 \
@@ -67,8 +67,8 @@ $ qemu-system-x86_64 \
     -smp 1 -m 128M \
     -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
     -display none -serial stdio \
-    -kernel rusty-loader-x86_64 \
+    -kernel hermit-loader-x86_64 \
     -initrd target/x86_64-unknown-hermit/debug/hermit-rs-template
 ```
 
-For more details, see the [loader's README](https://github.com/hermitcore/loader/blob/master/README.md).
+For more details, see the [loader's README](https://github.com/hermit-os/loader/blob/master/README.md).
