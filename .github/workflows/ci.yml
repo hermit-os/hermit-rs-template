@@ -38,7 +38,7 @@ jobs:
       - name: Download rust-std-hermit
         uses: dsaltares/fetch-gh-release-asset@master
         with:
-          repo: hermitcore/rust-std-hermit
+          repo: hermit-os/rust-std-hermit
           version: tags/1.73.0
           file: rust-std-1.73.0-x86_64-unknown-hermit.tar.gz
       - name: Install rust-std-hermit
@@ -48,7 +48,7 @@ jobs:
       - name: Download loader
         uses: dsaltares/fetch-gh-release-asset@master
         with:
-          repo: hermitcore/loader
+          repo: hermit-os/loader
           file: rusty-loader-x86_64
       - name: Building dev version
         run: cargo build --target x86_64-unknown-hermit --locked
