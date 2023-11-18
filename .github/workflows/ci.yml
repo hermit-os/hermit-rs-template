@@ -37,12 +37,12 @@ jobs:
         uses: dsaltares/fetch-gh-release-asset@master
         with:
           repo: hermit-os/rust-std-hermit
-          version: tags/1.73.0
-          file: rust-std-1.73.0-x86_64-unknown-hermit.tar.gz
+          version: tags/1.74.0
+          file: rust-std-1.74.0-x86_64-unknown-hermit.tar.gz
       - name: Install rust-std-hermit
         run: |
-          tar xvf rust-std-1.73.0-x86_64-unknown-hermit.tar.gz
-          ./rust-std-1.73.0-x86_64-unknown-hermit/install.sh
+          tar xvf rust-std-1.74.0-x86_64-unknown-hermit.tar.gz
+          ./rust-std-1.74.0-x86_64-unknown-hermit/install.sh
       - name: Download loader
         uses: dsaltares/fetch-gh-release-asset@master
         with:
