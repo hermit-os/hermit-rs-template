@@ -4,4 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [target.'cfg(target_os = "hermit")'.dependencies]
-hermit = "0.7"
+hermit = { git = "https://github.com/mkroening/rusty-hermit", rev = "7768b553edadcce2bc4c99852df2330095175a67" }
