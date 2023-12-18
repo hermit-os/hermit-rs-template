@@ -31,7 +31,7 @@ jobs:
         run: |
           choco install qemu
           echo "C:\Program Files\qemu" >> $GITHUB_PATH
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: mkroening/rust-toolchain-toml@main
       - name: Download rust-std-hermit
         uses: dsaltares/fetch-gh-release-asset@master
