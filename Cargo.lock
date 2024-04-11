@@ -101,9 +101,9 @@ dependencies = [
 
 [[package]]
 name = "hermit"
-version = "0.8.2"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5561e9fb70066262b771a35f13ababa46035ea11342bd3677d74a9568ff4b386"
+checksum = "afeb7cfc15284a9b5e752e1155a82be18c771bfdbb7b8395adce0b54030bd8e6"
 dependencies = [
  "flate2",
  "tar",
