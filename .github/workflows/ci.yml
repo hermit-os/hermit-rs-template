@@ -37,11 +37,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: mkroening/rust-toolchain-toml@main
       - name: Download rust-std-hermit
-        run: gh release download 1.76.0 --repo hermit-os/rust-std-hermit --pattern rust-std-1.76.0-x86_64-unknown-hermit.tar.gz
+        run: gh release download 1.77.2 --repo hermit-os/rust-std-hermit --pattern rust-std-1.77.2-x86_64-unknown-hermit.tar.gz
       - name: Install rust-std-hermit
         run: |
-          tar xvf rust-std-1.76.0-x86_64-unknown-hermit.tar.gz
-          ./rust-std-1.76.0-x86_64-unknown-hermit/install.sh
+          tar xvf rust-std-1.77.2-x86_64-unknown-hermit.tar.gz
+          ./rust-std-1.77.2-x86_64-unknown-hermit/install.sh
       - name: Download loader
         run: gh release download --repo hermit-os/loader --pattern hermit-loader-x86_64
       - name: Building dev version
@@ -51,7 +51,6 @@ jobs:
           qemu-system-x86_64 \
             -cpu qemu64,apic,fsgsbase,fxsr,rdrand,rdtscp,xsave,xsaveopt \
             -smp 1 -m 128M \
-            -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
             -display none -serial stdio \
             -kernel hermit-loader-x86_64 \
             -initrd target/x86_64-unknown-hermit/debug/hermit-rs-template
@@ -62,7 +61,6 @@ jobs:
           qemu-system-x86_64 \
             -cpu qemu64,apic,fsgsbase,fxsr,rdrand,rdtscp,xsave,xsaveopt \
             -smp 1 -m 128M \
-            -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
             -display none -serial stdio \
             -kernel hermit-loader-x86_64 \
             -initrd target/x86_64-unknown-hermit/release/hermit-rs-template
