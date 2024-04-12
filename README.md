@@ -15,16 +15,8 @@ An application template for [Hermit for Rust](https://github.com/hermit-os/hermi
 
 *   Add the `hermit` dependency for hermit targets in `Cargo.toml`.
 
-    ```toml
-    [target.'cfg(target_os = "hermit")'.dependencies]
-    hermit = "<version>"
-    ```
-
-*   Use the [exact Rust version](rust-toolchain.toml#L2) required by `hermit` in `rust-toolchain.toml`.
-
-    ```toml
-    [toolchain]
-    channel = "<version>"
+    ```bash
+    cargo add --target 'cfg(target_os = "hermit")' hermit
     ```
 
 *   Make sure we link against hermit in `main.rs`:
@@ -40,6 +32,9 @@ An application template for [Hermit for Rust](https://github.com/hermit-os/hermi
 ### Install the Rust Standard Library for Hermit
 
 See [rust-std-hermit](https://github.com/hermit-os/rust-std-hermit).
+
+Note that rust-std-hermit is not available for the `stable` toolchain channel but for specific channels of stable Rust versions.
+See [rust-toolchain.toml](rust-toolchain.toml).
 
 ### Build the Hermit Application
 
