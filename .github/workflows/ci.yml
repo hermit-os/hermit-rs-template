@@ -32,7 +32,7 @@ jobs:
       - name: Install QEMU (windows)
         if: matrix.os == 'windows-latest'
         run: |
-          choco install qemu
+          winget install --id SoftwareFreedomConservancy.QEMU -e --accept-source-agreements
           echo "C:\Program Files\qemu" >> $GITHUB_PATH
       - uses: actions/checkout@v4
       - uses: mkroening/rust-toolchain-toml@main
