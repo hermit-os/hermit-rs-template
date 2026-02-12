@@ -43,6 +43,7 @@ jobs:
           ./rust-std-1.93.0-x86_64-unknown-hermit/install.sh
       - name: Download loader
         run: gh release download --repo hermit-os/loader --pattern hermit-loader-x86_64
+      - run: cargo fetch --target x86_64-unknown-hermit
       - name: Building dev version
         run: cargo build --target x86_64-unknown-hermit --locked
       - name: Run dev version
