@@ -13,10 +13,22 @@ An application template for [Hermit for Rust](https://github.com/hermit-os/hermi
 
 (this is already done in this repo)
 
-*   Add the `hermit` dependency for hermit targets in `Cargo.toml`.
+*   Add the `hermit` dependency to your Cargo.toml:
+
+    ```toml
+    [target.'cfg(target_os = "hermit")'.dependencies]
+    hermit = { git = "https://github.com/hermit-os/hermit-rs.git", tag = "hermit-0.13.0" }
+    ```
+
+    Or use [cargo-add]:
+
+    [cargo-add]: https://doc.rust-lang.org/cargo/commands/cargo-add.html
 
     ```bash
-    cargo add --target 'cfg(target_os = "hermit")' hermit
+    cargo add hermit \
+        --target 'cfg(target_os = "hermit")' \
+        --git 'https://github.com/hermit-os/hermit-rs.git' \
+        --tag 'hermit-0.13.0'
     ```
 
 *   Make sure we link against hermit in `main.rs`:

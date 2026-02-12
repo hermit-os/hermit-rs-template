@@ -3,4 +3,4 @@ name = "hermit-rs-template"
 edition = "2024"
 
 [target.'cfg(target_os = "hermit")'.dependencies]
-hermit = "0.12"
+hermit = { git = "https://github.com/hermit-os/hermit-rs.git", tag = "hermit-0.13.0" }
