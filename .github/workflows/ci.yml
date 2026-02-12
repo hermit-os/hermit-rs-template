@@ -26,8 +26,7 @@ jobs:
       - name: Install QEMU (macos)
         if: matrix.os == 'macos-latest'
         run: |
-          # TODO: Enable once it works again
-          # brew update
+          brew update
           brew install qemu
       - name: Install QEMU (windows)
         if: matrix.os == 'windows-latest'
