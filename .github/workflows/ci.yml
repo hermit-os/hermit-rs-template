@@ -34,7 +34,7 @@ jobs:
         run: |
           winget install --id SoftwareFreedomConservancy.QEMU -e --accept-source-agreements
           echo "C:\Program Files\qemu" >> $GITHUB_PATH
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: mkroening/rust-toolchain-toml@main
       - name: Download rust-std-hermit
         run: gh release download 1.93.0 --repo hermit-os/rust-std-hermit --pattern rust-std-1.93.0-x86_64-unknown-hermit.tar.gz
