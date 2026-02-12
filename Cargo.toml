@@ -1,6 +1,6 @@
 [package]
 name = "hermit-rs-template"
-edition = "2021"
+edition = "2024"
 
 [target.'cfg(target_os = "hermit")'.dependencies]
 hermit = "0.12"
