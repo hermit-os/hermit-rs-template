@@ -2,5 +2,16 @@
 name = "hermit-rs-template"
 edition = "2024"
 
-[target.'cfg(target_os = "hermit")'.dependencies]
-hermit = { git = "https://github.com/hermit-os/hermit-rs.git", tag = "hermit-0.13.0" }
+[dependencies]
+axum = "0.8"
+tokio = "1"
+
+[target.'cfg(target_os = "hermit")'.dependencies.hermit]
+git = "https://github.com/hermit-os/hermit-rs.git"
+tag = "hermit-0.13.2"
+default-features = false
+features = ["dhcpv4", "tcp", "virtio-net"]
+
+[patch.crates-io]
+socket2 = { git = "https://github.com/hermit-os/socket2.git", branch = "v0.5.x" }
+tokio = { git = "https://github.com/hermit-os/tokio.git", branch = "v/tokio-1.45.0" }
