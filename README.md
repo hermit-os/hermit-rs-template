@@ -74,7 +74,7 @@ $ qemu-system-x86_64 \
     -smp 1 -m 128M \
     -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
     -display none -serial stdio \
-    -kernel hermit-loader-x86_64 \
+    -kernel hermit-loader-x86_64-multiboot \
     -initrd target/x86_64-unknown-hermit/debug/hermit-rs-template
 ```
 

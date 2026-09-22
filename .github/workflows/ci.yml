@@ -42,7 +42,7 @@ jobs:
           tar xvf rust-std-1.94.0-x86_64-unknown-hermit.tar.gz
           ./rust-std-1.94.0-x86_64-unknown-hermit/install.sh
       - name: Download loader
-        run: gh release download --repo hermit-os/loader --pattern hermit-loader-x86_64
+        run: gh release download --repo hermit-os/loader --pattern hermit-loader-x86_64-multiboot
       - name: Building dev version
         run: cargo build --target x86_64-unknown-hermit --locked
       - name: Run dev version
@@ -51,7 +51,7 @@ jobs:
             -cpu qemu64,apic,fsgsbase,fxsr,rdrand,rdtscp,xsave,xsaveopt \
             -smp 1 -m 128M \
             -display none -serial stdio \
-            -kernel hermit-loader-x86_64 \
+            -kernel hermit-loader-x86_64-multiboot \
             -initrd target/x86_64-unknown-hermit/debug/hermit-rs-template
       - name: Building release version
         run: cargo build --target x86_64-unknown-hermit --locked --release
@@ -61,5 +61,5 @@ jobs:
             -cpu qemu64,apic,fsgsbase,fxsr,rdrand,rdtscp,xsave,xsaveopt \
             -smp 1 -m 128M \
             -display none -serial stdio \
-            -kernel hermit-loader-x86_64 \
+            -kernel hermit-loader-x86_64-multiboot \
             -initrd target/x86_64-unknown-hermit/release/hermit-rs-template
