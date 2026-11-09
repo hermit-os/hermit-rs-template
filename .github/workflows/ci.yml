@@ -33,6 +33,12 @@ jobs:
         run: |
           winget install --id SoftwareFreedomConservancy.QEMU -e --accept-source-agreements
           echo "C:\Program Files\qemu" >> $GITHUB_PATH
+      - name: Install Uhyve
+        uses: taiki-e/install-action@v2
+        with:
+          tool: uhyve
+        if: matrix.os == 'ubuntu-latest' # KVM access is only available on Linux runners yet.
+
       - uses: actions/checkout@v6
       - uses: mkroening/rust-toolchain-toml@main
       - name: Download rust-std-hermit
@@ -43,6 +49,7 @@ jobs:
           ./rust-std-1.99.0-x86_64-unknown-hermit/install.sh
       - name: Download loader
         run: gh release download --repo hermit-os/loader --pattern hermit-loader-x86_64-multiboot
+
       - name: Building dev version
         run: cargo build --target x86_64-unknown-hermit --locked
       - name: Run dev version
@@ -53,6 +60,11 @@ jobs:
             -display none -serial stdio \
             -kernel hermit-loader-x86_64-multiboot \
             -initrd target/x86_64-unknown-hermit/debug/hermit-rs-template
+      - name: Run dev version (Uhyve)
+        run: |
+          sudo "$CARGO_HOME/bin/uhyve" -c 2 target/x86_64-unknown-hermit/debug/hermit-rs-template
+        if: matrix.os == 'ubuntu-latest' # KVM access is only available on Linux runners yet.
+
       - name: Building release version
         run: cargo build --target x86_64-unknown-hermit --locked --release
       - name: Run release version
@@ -63,3 +75,7 @@ jobs:
             -display none -serial stdio \
             -kernel hermit-loader-x86_64-multiboot \
             -initrd target/x86_64-unknown-hermit/release/hermit-rs-template
+      - name: Run release version (Uhyve)
+        run: |
+          sudo "$CARGO_HOME/bin/uhyve" -c 2 target/x86_64-unknown-hermit/release/hermit-rs-template
+        if: matrix.os == 'ubuntu-latest' # KVM access is only available on Linux runners yet.
